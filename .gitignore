@@ -100,5 +100,5 @@ local.properties
 
 .sts4-cache/
 
-/application-oauth.properties
+/resources/application-oauth.properties
 
