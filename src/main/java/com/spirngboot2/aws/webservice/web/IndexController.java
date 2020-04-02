@@ -1,23 +1,34 @@
 package com.spirngboot2.aws.webservice.web;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+
+import com.spirngboot2.aws.webservice.config.auth.LoginUser;
+import com.spirngboot2.aws.webservice.config.auth.dto.SessionUser;
 import com.spirngboot2.aws.webservice.service.PostsService;
 import com.spirngboot2.aws.webservice.web.dto.PostsResponseDto;
+
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Controller
 public class IndexController {
     private final PostsService postsService;
-
+    private final HttpSession httpSession;
+    
     @GetMapping("/")
-    public String index(Model model) {
+    public String index(Model model, @LoginUser SessionUser user) {
         model.addAttribute("posts", postsService.findAllDesc());
-       
-        return "index";
+        
+        if(user != null) {
+            model.addAttribute("userName", user.getName());
+        }
+
+        return "/index";
     }
 
     @GetMapping("/posts/save")

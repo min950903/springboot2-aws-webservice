@@ -1,8 +1,10 @@
 package com.spirngboot2.aws.webservice.domain.posts;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
 import java.time.LocalDateTime;
 import java.util.List;
+
 import org.junit.After;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
