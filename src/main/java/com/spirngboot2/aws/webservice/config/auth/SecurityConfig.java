@@ -29,6 +29,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
                         .logoutSuccessUrl("/")
                 .and()
                     .oauth2Login()
+                        .defaultSuccessUrl("/", true)
                             .userInfoEndpoint()
                                 .userService(customOAuth2UserService);
     }
