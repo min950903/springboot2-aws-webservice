@@ -26,7 +26,7 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 
-	compile('com.h2database:h2')
+	compile'com.h2database:h2:1.4.199', name:'h2.1.4.199'
 	compile("org.mariadb.jdbc:mariadb-java-client")
 	
 	compile('org.springframework.boot:spring-boot-starter-oauth2-client')
