@@ -8,6 +8,14 @@ branches:
 before_install:
   - chmod +x gradlew
 
+#Travic CI 서버의 Home
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOEM/.gradle'
+
+script: "./gradlew clean build"
+
 before_deploy:
   - zip -r springboot2-aws-webservice *
   - mkdir -p deploy
@@ -30,22 +38,14 @@ deploy:
     secret_access_key: $AWS_SECURITY_KEY # Travice repo settings에 설정된 값
 
     bucket: aws-spring-webservice-build # s3
-    key: springboot2-aws-webservice.zip
-
+    key: springboot2-aws-webservice.zip #빌드 파일 압축해서 wjsekf
     bundle_type: zip
     application: springboot2-webservice #웹 콘솔에서 등록한 codedeploy 애플리케이션
-    deployment_group: springboot2-webservice #웹 콘솔에서 등록한 codedeploy 배포 그룹
+   
+    deployment_group: springboot2-webservice-group #웹 콘솔에서 등록한 codedeploy 배포 그룹
+   
     region: ap-northeast-2
     wait-until-deployed: true
-
-
-#Travic CI 서버의 Home
-cache:
-  directories:
-    - '$HOME/.m2/repository'
-    - '$HOEM/.gradle'
-
-script: "./gradlew clean build"
 
 #CI 실행 완료시 메일로 알람
 notifications: 
