@@ -36,7 +36,7 @@ deploy:
     application: springboot2-webservice #웹 콘솔에서 등록한 codedeploy 애플리케이션
     deployment_group: springboot2-webservice #웹 콘솔에서 등록한 codedeploy 배포 그룹
     region: ap-northeast-2
-    wait-untill-deployed: true
+    wait-until-deployed: true
 
 
 #Travic CI 서버의 Home
