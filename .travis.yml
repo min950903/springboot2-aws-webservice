@@ -16,7 +16,7 @@ before_deploy:
 deploy:
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY #Travice repo settions에 설정된 값
-    secret_access_key: $AWS_SECRET_KEY # Travice repo settings에 설정된 값
+    secret_access_key: $AWS_SECURITY_KEY # Travice repo settings에 설정된 값
 
     bucket: aws-spring-webservice-build # s3
     region: ap-northeast-2
