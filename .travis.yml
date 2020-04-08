@@ -11,7 +11,7 @@ before_install:
 before_deploy:
   - zip -r springboot2-aws-webservice *
   - mkdir -p deploy
-  - mv spring-webservice.zip deploy/springboot2-aws-webservice.zip
+  - mv springboot2-aws-webservice.zip deploy/springboot2-aws-webservice.zip
 
 deploy:
   - provider: s3
