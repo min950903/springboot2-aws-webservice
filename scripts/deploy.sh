@@ -20,13 +20,13 @@ else
     sleep 5
 fi
 
-echo">새애플리케이션 배포"
+echo ">새애플리케이션 배포"
 
 JAR_NAME=$(ls -tr $REPOSITORY/*.jar | tail -n -1)
 
-echo">JAR_NAME= $JAR_NAME"
+echo ">JAR_NAME: $JAR_NAME"
 
-echo">$JAR_NAME에 실행 권한 추가"
+echo ">$JAR_NAME에 실행 권한 추가"
 
 chmod +x $JAR_NAME
 
