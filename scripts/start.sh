@@ -30,5 +30,3 @@ nohup java -jar \
     	, /hoem/ec2-user/ec2/app/application-real-db.properties \
     -Dspring.profiles.active=$IDLE_PROFILE \
     $JAR_NAME > $REPOSITORY/nohub.out 2>&1 &
-
-

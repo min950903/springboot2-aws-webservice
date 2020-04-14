@@ -4,6 +4,7 @@ files:
   - source: /
     destination: /home/ec2-user/ec2/app/step3/zip/
     overwrite:  yes
+    
 permissions:
   - object: /
     pattern: "**"
