@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+ABSPATH=$(readlink -f $0)
+ABSDIR=$(dirname $ABSPATH)
+source ${ABSDIR}/profile.sh
+
 REPOSITORY=/home/ec2-user/ec2/app/step3
 PROJECT_NAME=springboot2-webservice
 
