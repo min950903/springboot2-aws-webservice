@@ -19,12 +19,12 @@ import lombok.RequiredArgsConstructor;
 public class IndexController {
     private final PostsService postsService;
     private final HttpSession httpSession;
-    
+
     @GetMapping("/")
     public String index(Model model, @LoginUser SessionUser user) {
         model.addAttribute("posts", postsService.findAllDesc());
-        
-        if(user != null) {
+
+        if (user != null) {
             model.addAttribute("userName", user.getName());
         }
 
